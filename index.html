@@ -65,7 +65,8 @@
             </li>
           </ul>
           <span class="navbar-text">
-            <a data-toggle="modal" data-target="#loginModal">
+            <!-- Button login -->
+            <a id="loginModalLink">
               <span class="fa fa-sign-in"></span> Login
             </a>
           </span>
@@ -73,6 +74,7 @@
       </div>
     </nav>
 
+    <!-- Login Modal -->
     <div id="loginModal" class="modal fade" role="dialog">
       <div class="modal-dialog modal-lg" role="content">
         <div class="modal-content">
@@ -132,6 +134,7 @@
       </div>
     </div>
 
+    <!-- Reserve Table Modal -->
     <div id="reserveTable" class="modal fade" role="dialog">
       <div class="modal-dialog modal-lg" role="content">
         <div class="modal-content">
@@ -282,12 +285,12 @@
             <img src="img/logo.png" alt="logo" class="img-fluid" />
           </div>
           <div class="col-md-3 col-sm-3 align-self-center">
+            <!-- Reserve Table Button -->
             <a
               role="button"
               href="#reserve"
               class="btn btn-warning btn-sm btn-block text-white"
-              data-toggle="modal"
-              data-target="#reserveTable"
+              id="reserveTableLink"
               >Reserve Table</a
             >
           </div>
@@ -544,7 +547,7 @@
       <script>
         $(document).ready(function(){
             $("#mycarousel").carousel( { interval: 2000 } );
-           $("#carouselButton").click(function(){
+            $("#carouselButton").click(function(){
                 if ($("#carouselButton").children("span").hasClass('fa-pause')) {
                     $("#mycarousel").carousel('pause');
                     $("#carouselButton").children("span").removeClass('fa-pause');
@@ -558,6 +561,22 @@
             });
 
         });
+      </script>
+      
+      <script>
+        $(document).ready(function() {
+          $('#loginModalLink').click(function() {
+            $('#loginModal').modal('show');
+          })
+        })
+      </script>
+
+      <script>
+        $(document).ready(function() {
+          $('#reserveTableLink').click(function() {
+            $('#reserveTable').modal('show');
+          })
+        })
       </script>
   </body>
 </html>
